@@ -54,3 +54,16 @@ var app = {
 function vibracao(){
     navigator.vibrate(1000);
 }
+
+function cameraCallback () {
+    var image = document.getElementById("myImagine");
+    image.src = imageData;
+}
+
+function onError(errorMessage) {
+    console.log(errorMessage);
+}
+
+function takePicture () {
+    navigator.camera.getPicture(cameraCallback, onError);
+}
